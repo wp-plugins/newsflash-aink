@@ -15,17 +15,17 @@ Inserts a fading or sliding text banner (ticker).
 
 in Newflash Setting, you can set:
 
-* Newflash Enable: To show Newsflash Aink on your site.
+* Newflash Enable: To show NewsFlash Aink on your site.
 * Newflash Width: Width for newsflash.
 * Newflash Speed: Speed for newsflash in second.
 * Newflash Title Text Align: Text align for title of newsflash.
-* Newflash Content Text Align: Text align for content of newsticker.
+* Newflash Content Text Align: Text align for content of newsflash.
 
 in Newflash Create New pages, you can set:
 
 * Newflash Content: Content for your newsticker, HTML is allowed.
-* Newflash Status: Status for your newsticker. If you do not want the newsticker live, select "Inactive".
-* Newflash Show for: Show the newsticker for selected user.
+* Newflash Status: Status for your newsticker. If you do not want the newsflash live, select "Inactive".
+* Newflash Show for: Show the newsflash for selected user.
 
 
 == Installation ==
