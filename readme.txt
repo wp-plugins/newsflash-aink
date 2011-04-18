@@ -40,10 +40,25 @@ in Newflash Create New pages, you can set:
 5. Create a new Newflash on Newflash ==> Create New page.
 
 
+== Upgrade Notice ==
+
+No available
+
+
+== Screenshots ==
+
+No available
+
+
+== Frequently Asked Questions ==
+
+No available
+
+
 == Notice ==
 
 If you found a bugs, or want to donate, please use this email; yumanie[at]gmail[dot]com. Thanks before.
- 
+
 
 == Changelog ==
 
