@@ -16,7 +16,7 @@ Inserts a fading or sliding text banner (ticker).
 in Newflash Setting, you can set:
 
 * Newflash Enable: To show Newsflash Aink on your site.
-* Newflash Wirdth: Width for newsflash.
+* Newflash Width: Width for newsflash.
 * Newflash Speed: Speed for newsflash in second.
 * Newflash Title Text Align: Text align for title of newsflash.
 * Newflash Content Text Align: Text align for content of newsticker.
@@ -34,7 +34,7 @@ in Newflash Create New pages, you can set:
 2. Activate the plugin through the "Plugins" menu in WordPress,
 3. Then place the following code into your theme files where you want the menu to appear:
 
-	<?php if(function_exists('NewsFlashAink')) { echo NewsFlashAink(); } ?>
+	&lt;?php if(function_exists('NewsFlashAink')) { echo NewsFlashAink(); } ?&gt;
 
 4. Configure options via the Newflash ==> Settings menu,
 5. Create a new Newflash on Newflash ==> Create New page.
