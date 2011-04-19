@@ -1,6 +1,6 @@
 === NewFlash Aink ===
 Contributors: Dannie Herdyawan
-Donate link: http://www.classifindo.com
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7QJS8A2BP3M9W&lc=ID&item_name=Classifindo&item_number=NewsFlash%20Aink&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: newflash, aink, newflash aink, news, ticker, marquee, scrolling text, news flash, flash
 Requires at least: 1.0.0
 Tested up to: 3.0
