@@ -97,18 +97,18 @@ function NewsFlashAink_new()
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-add_action("plugins_loaded", "install_NewsflashAink");
-add_action("wp_head", "NewsflashAink_head");
+add_action("plugins_loaded", "install_NewsFlashAink");
+add_action("wp_head", "NewsFlashAink_head");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function NewsflashAink_head()
+function NewsFlashAink_head()
 {
 	global $options, $NewsFlashAink_path;
 	$options = get_option('NewsFlashAink_option');
 ///////////////////////////////////////////////////////////////////////////////
 
-	echo '<!-- Newsflash Aink -->';
+	echo '<!-- NewsFlash Aink -->';
 ///////////////////////////////////////////////////////////////////////////////
 	echo '<script type="text/javascript" language="javascript" src="'.$NewsFlashAink_path.'/js/jcarousellite.js"></script>';
 	echo '<script type="text/javascript" language="javascript" src="'.$NewsFlashAink_path.'/js/easing.js"></script>';
@@ -128,7 +128,7 @@ function NewsflashAink_head()
 ////////////////////////////////////////////////////////////////////////////////
 	echo '<link href="'.$NewsFlashAink_path.'/css/newsflash-aink.css" type="text/css" rel="stylesheet" />';
 ///////////////////////////////////////////////////////////////////////////////
-	echo '<!-- Newsflash Aink -->';
+	echo '<!-- NewsFlash Aink -->';
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -176,13 +176,13 @@ function NewsFlashAink()
 			if ($options[NewsFlashAink_title] != '' ) {
 				echo $options[NewsFlashAink_title];
 			} else {
-				echo 'Newsflash Aink';
+				echo 'NewsFlash Aink';
 			};
 		?>
 		</div>
 		<div class="newsflash-right">
 			<span>
-				<a href="http://www.classifindo.com/newsflash" target="_blank">
+				<a href="http://www.classifindo.com/newsflash-aink/" target="_blank">
 					<img src="<?php echo $NewsFlashAink_path; ?>/images/info.png" />
 				</a>
 			</span>

@@ -1,7 +1,7 @@
-=== Newsflash Aink ===
+=== NewFlash Aink ===
 Contributors: Dannie Herdyawan
 Donate link: http://www.classifindo.com
-Tags: newsticker, aink, newsticker aink, news, ticker, marquee, scrolling text, news flash, flash
+Tags: newflash, aink, newflash aink, news, ticker, marquee, scrolling text, news flash, flash
 Requires at least: 1.0.0
 Tested up to: 3.0
 Stable tag: 1.0.0
@@ -11,33 +11,33 @@ Inserts a fading or sliding text banner (ticker).
 
 == Description ==
 
-**A JQuery based Newsticker Displays a sliding or fading list of news or information and ads or link. Starting from Wordpress ver.3.0 the ticker can also be used as a image gallery with description**
+**A JQuery based NewFlash Displays a sliding or fading list of news or information and ads or link. Starting from Wordpress ver.3.0 the ticker can also be used as a image gallery with description**
 
-in Newflash Setting, you can set:
+in NewFlash Setting, you can set:
 
-* Newflash Enable: To show NewsFlash Aink on your site.
-* Newflash Width: Width for newsflash.
-* Newflash Speed: Speed for newsflash in second.
-* Newflash Title Text Align: Text align for title of newsflash.
-* Newflash Content Text Align: Text align for content of newsflash.
+* NewFlash Enable: To show NewFlash Aink on your site.
+* NewFlash Width: Width for NewFlash.
+* NewFlash Speed: Speed for NewFlash in second.
+* NewFlash Title Text Align: Text align for title of NewFlash.
+* NewFlash Content Text Align: Text align for content of NewFlash.
 
-in Newflash Create New pages, you can set:
+in NewFlash Create New pages, you can set:
 
-* Newflash Content: Content for your newsticker, HTML is allowed.
-* Newflash Status: Status for your newsticker. If you do not want the newsflash live, select "Inactive".
-* Newflash Show for: Show the newsflash for selected user.
+* NewFlash Content: Content for your NewFlash, HTML is allowed.
+* NewFlash Status: Status for your NewFlash. If you do not want the NewFlash live, select "Inactive".
+* NewFlash Show for: Show the NewFlash for selected user.
 
 
 == Installation ==
 
-1. Upload the folder `newsflash-aink` to your `/wp-content/plugins/` directory,
+1. Upload the folder `newflash-aink` to your `/wp-content/plugins/` directory,
 2. Activate the plugin through the "Plugins" menu in WordPress,
 3. Then place the following code into your theme files where you want the menu to appear:
 
-	&lt;?php if(function_exists('NewsFlashAink')) { echo NewsFlashAink(); } ?&gt;
+	&lt;?php if (function_exists('NewFlashAink')) { echo NewFlashAink(); } ?&gt;
 
-4. Configure options via the Newflash ==> Settings menu,
-5. Create a new Newflash on Newflash ==> Create New page.
+4. Configure options via the NewFlash ==> Settings menu,
+5. Create a new NewFlash on NewFlash ==> Create New page.
 
 
 == Upgrade Notice ==

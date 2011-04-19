@@ -1,19 +1,19 @@
 <?php function NewsFlashAinkSettings() { global $options; $options = get_option('NewsFlashAink_option'); ?>
 <div class="wrap">
 <div class="icon32" id="icon-tools"><br/></div>
-<h2><?php echo __('Newsflash Aink'); ?></h2>
+<h2><?php echo __('NewsFlash Aink'); ?></h2>
 
 <form method="post" id="mainform" action="">
 <table class="widefat fixed" style="margin:25px 0;">
 	<thead>
 		<tr>
-			<th scope="col" width="200px">Newsflash Aink Settings</th>
+			<th scope="col" width="200px">NewsFlash Aink Settings</th>
 			<th scope="col">&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="titledesc">Newsflash Enable:</td>
+			<td class="titledesc">NewsFlash Enable:</td>
 			<td class="forminp">
 				<select name="NewsFlashAink_enable" id="NewsFlashAink_enable" style="min-width:100px;">
 					<?php if ($options[NewsFlashAink_enable] == 'yes'){ ?>
@@ -27,28 +27,28 @@
 						<option value="no">No</option>
 					<?php } ?>
 				</select>
-				<br /><small>If you do not want to show Newsflash Aink on your site, select "No".</small>
+				<br /><small>If you do not want to show NewsFlash Aink on your site, select "No".</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Title:</td>
+			<td class="titledesc">NewsFlash Title:</td>
 			<td class="forminp">
 				<input name="NewsFlashAink_title" id="NewsFlashAink_title" style="width:250px;" value="<?php echo $options[NewsFlashAink_title]; ?>" type="text">
 				<br /><small>ex: "Information" or "News Flash" without quotes.</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Width:</td>
+			<td class="titledesc">NewsFlash Width:</td>
 			<td class="forminp">
 				<input name="NewsFlashAink_width" id="NewsFlashAink_width" style="width:100px;" value="<?php echo $options[NewsFlashAink_width]; ?>" type="text">
 				<br /><small>ex: "500px" or "50%" without quotes.</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Speed:</td>
+			<td class="titledesc">NewsFlash Speed:</td>
 			<td class="forminp">
 				<input name="NewsFlashAink_speed" id="NewsFlashAink_speed" style="width:100px;" value="<?php echo $options[NewsFlashAink_speed]; ?>" type="text">
 				<br /><small>ex: "1000" or "10000" without quotes.</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Text Align:</td>
+			<td class="titledesc">NewsFlash Text Align:</td>
 			<td class="forminp">
 				<select name="NewsFlashAink_text_align" id="NewsFlashAink_text_align" style="min-width:100px;">
 					<?php if ($options[NewsFlashAink_text_align] == 'left'){ ?>
@@ -69,7 +69,7 @@
 						<option value="right">Right</option>
 					<?php } ?>
 				</select>
-				<br /><small>Text align for Newsflash.</small>
+				<br /><small>Text align for NewsFlash.</small>
 			</td>
 		</tr>
 	</tbody>
@@ -86,7 +86,7 @@
 <table class="widefat fixed" style="margin:25px 0;">
 	<thead>
 		<tr>
-			<th scope="col" width="200px">Donate for Newsflash Aink</th>
+			<th scope="col" width="200px">Donate for NewsFlash Aink</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -111,11 +111,11 @@ global $newsflash, $wpdb;
 // check to prevent php "notice: undefined index" msg
 if(isset($_GET['action'])) $theswitch = $_GET['action']; else $theswitch ='';
 
-switch($theswitch) { case 'addNewsflash': ?>
+switch($theswitch) { case 'addNewsFlash': ?>
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
-<h2><?php _e('Create Newsflash Aink','k0z3y') ?></h2>
+<h2><?php _e('Create NewsFlash Aink','k0z3y') ?></h2>
 
 <?php
 // check and make sure the form was submitted
@@ -186,7 +186,7 @@ if ($results) : ?>
 <?php } ?>
 </div>
 
-<?php break; case 'editNewsflash': ?>
+<?php break; case 'editNewsFlash': ?>
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
@@ -218,19 +218,19 @@ if ($results) : ?>
 <table class="widefat fixed" style="margin:25px 0;">
 	<thead>
 		<tr>
-			<th scope="col" width="200px">Newsflash Aink</th>
+			<th scope="col" width="200px">NewsFlash Aink</th>
 			<th scope="col">&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="titledesc">Newsflash Content:</td>
+			<td class="titledesc">NewsFlash Content:</td>
 			<td class="forminp">
 				<textarea name="content" id="content" style="width:500px;height:100px;" class="required" minlength="5"><?php foreach ($wpdb->get_results($AllUser) as $All) { ?><?php echo $All->content; ?><?php } ?></textarea>
 				<br><small>HTML is allowed.</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Status:</td>
+			<td class="titledesc">NewsFlash Status:</td>
 			<td class="forminp">
 				<select name="status" id="status" style="min-width: 100px;" class="required">
 					<?php foreach ($wpdb->get_results($AllUser) as $Status) { ?>
@@ -243,10 +243,10 @@ if ($results) : ?>
 						<?php } ?>
 					<?php } ?>
 				</select>
-				<br><small>If you do not want this Newsflash live, select "Inactive".</small>
+				<br><small>If you do not want this NewsFlash live, select "Inactive".</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Show for:</td>
+			<td class="titledesc">NewsFlash Show for:</td>
 			<td class="forminp">
 				<select name="showfor" id="showfor" style="min-width: 125px;" class="required">
 					<?php foreach ($wpdb->get_results($AllUser) as $Show) { ?>
@@ -265,7 +265,7 @@ if ($results) : ?>
 						<?php } ?>
 					<?php } ?>
 				</select>
-				<br><small>Show Newsflash for selected user.</small>
+				<br><small>Show NewsFlash for selected user.</small>
 			</td>
 		</tr>
 	</tbody>
@@ -291,7 +291,7 @@ if ($results) : ?>
 
 ?>
 <?php global $NewsFlashAink_path; ?>
-<p style="text-align:center;padding-top:50px;font-size:22px;">Deleting Newsflash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
+<p style="text-align:center;padding-top:50px;font-size:22px;">Deleting NewsFlash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
 
 <?php break; default: global $NewsFlashAink_path;
 
@@ -329,14 +329,14 @@ a.delete:hover {
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
-<h2>Newsflash Aink&nbsp;<a class="button add-new-h2" href="?page=NewsFlashAink_new&amp;action=addNewsflash">Add New Newsflash</a></h2>
+<h2>NewsFlash Aink&nbsp;<a class="button add-new-h2" href="?page=NewsFlashAink_new&amp;action=addNewsFlash">Add New Newsflash</a></h2>
 
 
 <table id="tblspacer" class="widefat fixed" style="margin:25px 0;">
 	<thead style="width:100%;">
 		<tr style="width:100%;">
 			<th scope="col" style="width:20px;">&nbsp;</th>
-			<th scope="col"><?php _e('Newsflash','k0z3y') ?></th>
+			<th scope="col"><?php _e('NewsFlash','k0z3y') ?></th>
 			<th scope="col" style="width:120px;"><?php _e('Created','k0z3y') ?></th>
 			<th scope="col" style="width:120px;"><?php _e('Modified','k0z3y') ?></th>
 			<th scope="col" style="width:50px;"><?php _e('Status','k0z3y') ?></th>
@@ -355,14 +355,14 @@ a.delete:hover {
 			<td><?php echo ucfirst($result->status) ?></td>
 			<td><?php echo ucfirst($result->showfor) ?></td>
 			<td style="text-align:center">
-				<a href="?page=NewsFlashAink_new&amp;action=editNewsflash&amp;id=<?php echo $result->id ?>" class="edit" title="Edit"><span></span></a>&nbsp;&nbsp;&nbsp;<a onclick="return confirmBeforeDelete();" href="?page=newsflash_aink_new&amp;action=delete&amp;id=<?php echo $result->id ?>" class="delete" title="Delete"><span></span></a>
+				<a href="?page=NewsFlashAink_new&amp;action=editNewsFlash&amp;id=<?php echo $result->id ?>" class="edit" title="Edit"><span></span></a>&nbsp;&nbsp;&nbsp;<a onclick="return confirmBeforeDelete();" href="?page=newsflash_aink_new&amp;action=delete&amp;id=<?php echo $result->id ?>" class="delete" title="Delete"><span></span></a>
 			</td>
 		</tr>
 	<?php $i++; } ?>
 	</tbody>	
 	<?php } else { ?>
 		<tr>
-			<td colspan="7">No Newsflash found.</td>
+			<td colspan="7">No NewsFlash found.</td>
 		</tr>
 	<?php } ?>
 
@@ -373,7 +373,7 @@ a.delete:hover {
 
 <script type="text/javascript">
 	/* <![CDATA[ */
-		function confirmBeforeDelete() { return confirm("Are you sure you want to delete this Newsflash?"); }
+		function confirmBeforeDelete() { return confirm("Are you sure you want to delete this NewsFlash?"); }
 	/* ]]> */
 </script>
 
