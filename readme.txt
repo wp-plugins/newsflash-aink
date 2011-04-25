@@ -2,16 +2,16 @@
 Contributors: Dannie Herdyawan
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7QJS8A2BP3M9W&lc=ID&item_name=Classifindo&item_number=NewsFlash%20Aink&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: newflash, aink, newflash aink, news, ticker, marquee, scrolling text, news flash, flash
-Requires at least: 1.0.0
+Requires at least: 2.9
 Tested up to: 3.0
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 
-Inserts a fading or sliding text banner (ticker).
+Inserts a scroll up text.
 
 
 == Description ==
 
-**A JQuery based NewFlash Displays a sliding or fading list of news or information and ads or link. Starting from Wordpress ver.3.0 the ticker can also be used as a image gallery with description**
+**A JQuery based NewFlash Displays a scroll up text list of news or information and ads or link. Starting from Wordpress ver.3.0 the ticker can also be used as a image gallery with description**
 
 in NewFlash Setting, you can set:
 
@@ -64,3 +64,6 @@ If you found a bugs, or want to donate, please use this email; yumanie[at]gmail[
 
 = 1.0.0 =
 * (13 Apr 2011) - First Release.
+
+= 2.0.0 =
+* (27 Apr 2011) - Fixed NewsFlash Aink Setting show only for admin.

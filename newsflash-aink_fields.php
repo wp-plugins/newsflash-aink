@@ -134,7 +134,7 @@ if(isset($_POST['submitted'])) {
 if ($results) : ?>
 
 <?php global $NewsFlashAink_path; ?>
-<p style="text-align:center;padding-top:50px;font-size:22px;">Creating your Newsflash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
+<p style="text-align:center;padding-top:50px;font-size:22px;">Creating your NewsFlash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
 
 <?php endif; } else { ?>
 
@@ -142,41 +142,41 @@ if ($results) : ?>
 <table class="widefat fixed" style="margin:25px 0;">
 	<thead>
 		<tr>
-			<th scope="col" width="200px">Newsflash Aink</th>
+			<th scope="col" width="200px">NewsFlash Aink</th>
 			<th scope="col">&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="titledesc">Newsflash Content:</td>
+			<td class="titledesc">NewsFlash Content:</td>
 			<td class="forminp">
 				<textarea name="content" id="content" style="width:500px;height:100px;" class="required" minlength="5"></textarea>
 				<br><small>HTML is allowed.</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Status:</td>
+			<td class="titledesc">NewsFlash Status:</td>
 			<td class="forminp">
 				<select name="status" id="status" style="min-width:100px;" class="required">
 					<option value="Active">Active</option>
 					<option value="Inactive">Inactive</option>
 				</select>
-				<br><small>If you do not want this Newsflash live, select "Inactive".</small>
+				<br><small>If you do not want this NewsFlash live, select "Inactive".</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">Newsflash Show for:</td>
+			<td class="titledesc">NNewsFlash Show for:</td>
 			<td class="forminp">
 				<select name="showfor" id="showfor" style="min-width: 125px;" class="required">
 					<option value="All User">All User</option>
 					<option value="User Login">User Login</option>
 					<option value="User Not Login">User Not Login</option>
 				</select>
-				<br><small>Show Newsflash for selected user.</small>
+				<br><small>Show NewsFlash for selected user.</small>
 			</td>
 		</tr>
 	</tbody>
 </table>
 <p class="submit">
-	<input class="btn button-primary" name="save" type="submit" value="<?php _e('Create New Newsflash', 'k0z3y') ?>" />
+	<input class="btn button-primary" name="save" type="submit" value="<?php _e('Create New NewsFlash', 'k0z3y') ?>" />
 		&nbsp;&nbsp;&nbsp;
 	<input name="cancel" type="button" onClick="location.href='?page=NewsFlashAink_new'" value="<?php _e('Cancel','k0z3y')?>" />
 	<input name="submitted" type="hidden" value="yes" />
@@ -190,7 +190,7 @@ if ($results) : ?>
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
-<h2>Edit Newsflash Aink</h2>
+<h2>Edit NewsFlash Aink</h2>
 
 <?php if(isset($_POST['submitted']) && $_POST['submitted'] == 'yes') {
 

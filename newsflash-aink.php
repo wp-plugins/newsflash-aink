@@ -3,9 +3,10 @@
 
 /*
 Plugin Name: Newsflash Aink
-Description: Inserts a fading or sliding text banner (ticker)
+Plugin URI: http://www.classifindo.com/newsflash-aink/
+Description: Inserts a scroll up text
 Author: Dannie Herdyawan a.k.a k0z3y
-Version: 1.0.0
+Version: 2.0.0
 Author URI: http://www.classifindo.com/
 */
 
@@ -59,13 +60,13 @@ function hapus_NewsFlashAink()
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-if (is_admin()){
-	/* Call the html code */
-	add_action('admin_menu', 'NewsFlashAink_admin_menu');
-	function NewsFlashAink_admin_menu() {
-		global $NewsFlashAink_path;
-		add_object_page('NewsFlashAink','Newsflash',1,'NewsFlashAink','NewsFlashAink_page',$NewsFlashAink_path.'/images/favicon.png');
-		add_submenu_page('NewsFlashAink','Newsflash','Settings',1,'NewsFlashAink','NewsFlashAink_page');
+add_action('admin_menu', 'NewsFlashAink_admin_menu');
+
+function NewsFlashAink_admin_menu() {
+	global $NewsFlashAink_path;
+	if(current_user_can('manage_options')){
+		add_object_page('NewsFlashAink','NewsFlash',1,'NewsFlashAink','NewsFlashAink_page',$NewsFlashAink_path.'/images/favicon.png');
+		add_submenu_page('NewsFlashAink','NewsFlash','Settings',1,'NewsFlashAink','NewsFlashAink_page');
 		add_submenu_page('NewsFlashAink','Create New','Create New',1,'NewsFlashAink_new','NewsFlashAink_new');
 	}
 }
@@ -119,7 +120,7 @@ function NewsFlashAink_head()
 				vertical: true,
 				hoverPause: true,
 				visible: 1,
-				auto: 5000,
+				auto: 3500,
 				speed: ' . $options[NewsFlashAink_speed] . ',
 				easing: "easeOutSine"
 			});
@@ -133,7 +134,6 @@ function NewsFlashAink_head()
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* This Registers a Sidebar Widget.*/
 function NewsFlashAink()
 {
 	global $wpdb, $options, $NewsFlashAink_path, $userdata;

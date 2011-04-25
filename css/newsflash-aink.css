@@ -137,10 +137,8 @@ div#NewsFlashAink ul.newsflash-list li{
 	cursor:default;
 }
 div#NewsFlashAink ul.newsflash-list li a{
-	color:#700;
 	text-decoration:none;
 }
 div#NewsFlashAink ul.newsflash-list li a:hover{
-	color:#b00;
-	text-decoration:none;
+	text-decoration:underline;
 }
