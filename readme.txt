@@ -63,7 +63,7 @@ If you found a bugs, or want to donate, please use this email; yumanie[at]gmail[
 == Changelog ==
 
 = 1.0.0 =
-* (13 Apr 2011) - First Release.
+* (Apr 13, 2011) - First Release.
 
 = 2.0.0 =
-* (27 Apr 2011) - Fixed NewsFlash Aink Setting show only for admin.
+* (Apr 27, 2011) - Fixed NewsFlash Aink Setting show only for admin.
