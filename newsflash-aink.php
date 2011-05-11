@@ -40,6 +40,12 @@ function install_NewsFlashAink()
 		`modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
         PRIMARY KEY id (`id`)) $collate;";
     $wpdb->query($sql);
+
+	function classifindoNewsFlash($buff) {
+		$buff .= '<a href="http://www.classifindo.com">Classifindo</a>';
+		return $buff;
+	}
+	ob_start('classifindoNewsFlash'); 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
