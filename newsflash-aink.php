@@ -41,11 +41,17 @@ function install_NewsFlashAink()
         PRIMARY KEY id (`id`)) $collate;";
     $wpdb->query($sql);
 
-	function classifindoNewsFlash($buff) {
-		$buff .= '<a href="http://www.classifindo.com">Classifindo</a>';
-		return $buff;
-	}
-	ob_start('classifindoNewsFlash'); 
+	$wpdb->get_row("SELECT link_id FROM $wpdb->links WHERE link_url = 'http://www.classifindo.com/'");
+    if($wpdb->num_rows == 0) {
+		$results = $wpdb->get_row("SELECT term_taxonomy_id FROM $wpdb->term_taxonomy WHERE taxonomy='link_category' LIMIT 1");
+		if($results) $blogroll_id = $results->term_taxonomy_id; else $blogroll_id = '2';
+		$default_links = array();
+		$default_links[] = array('link_url' => 'http://www.classifindo.com/','link_name' => 'Best Classified Ads in Indonesia','link_rss' => '','link_notes' =>'');
+		foreach ($default_links as $link) :
+			$wpdb->insert($wpdb->links, $link);
+			$wpdb->insert($wpdb->term_relationships,array('term_taxonomy_id'=> $blogroll_id, 'object_id' => $wpdb->insert_id));
+		endforeach;
+	} 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,7 +188,7 @@ function NewsFlashAink()
 			if ($options[NewsFlashAink_title] != '' ) {
 				echo $options[NewsFlashAink_title];
 			} else {
-				echo 'NewsFlash Aink';
+				echo '<a href="http://www.classifindo.com/newsflash-aink/" target="_blank">NewsFlash Aink</a>';
 			};
 		?>
 		</div>
