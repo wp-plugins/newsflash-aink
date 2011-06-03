@@ -71,6 +71,20 @@
 				</select>
 				<br /><small>Text align for NewsFlash.</small>
 			</td>
+		</tr><tr>
+			<td class="titledesc">NewsFlash Show Link:</td>
+			<td class="forminp">
+				<input name="NewsFlashAink_link" type="checkbox" <?php
+				if($options[NewsFlashAink_link] == 'check') {
+					echo 'checked="checked" value="check"';
+				} else if($options[NewsFlashAink_link] != 'check') {
+					echo 'value="check"';					
+				} else {
+					echo 'checked="checked" value="check"';
+				}
+				?> />
+				<br /><small>Show NewsFlash Aink link.</small>
+			</td>
 		</tr>
 	</tbody>
 </table>

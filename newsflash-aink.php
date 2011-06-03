@@ -92,6 +92,7 @@ function NewsFlashAink_page() {
 		$options['NewsFlashAink_width']			= trim($_POST['NewsFlashAink_width'],'{}');
 		$options['NewsFlashAink_speed']			= trim($_POST['NewsFlashAink_speed'],'{}');
 		$options['NewsFlashAink_text_align']	= trim($_POST['NewsFlashAink_text_align'],'{}');
+		$options['NewsFlashAink_link']			= trim($_POST['NewsFlashAink_link'],'{}');
 		update_option('NewsFlashAink_option', $options);
 		// Show a message to say we've done something
 		echo '<div class="updated"><p>' . __("Save Changes") . '</p></div>';
@@ -188,15 +189,21 @@ function NewsFlashAink()
 			if ($options[NewsFlashAink_title] != '' ) {
 				echo $options[NewsFlashAink_title];
 			} else {
-				echo '<a href="http://www.classifindo.com/newsflash-aink/" target="_blank">NewsFlash Aink</a>';
+				if($options[NewsFlashAink_link] == 'check'){
+					echo '<a href="http://www.classifindo.com/newsflash-aink/" target="_blank">NewsFlash Aink</a>';
+				} else {
+					echo 'NewsFlash Aink';
+				}
 			};
 		?>
 		</div>
 		<div class="newsflash-right">
 			<span>
-				<a href="http://www.classifindo.com/newsflash-aink/" target="_blank">
-					<img src="<?php echo $NewsFlashAink_path; ?>/images/info.png" />
-				</a>
+				<?php if($options[NewsFlashAink_link] == 'check'){ ?>
+					<a href="http://www.classifindo.com/newsflash-aink/" target="_blank">
+						<img src="<?php echo $NewsFlashAink_path; ?>/images/info.png" />
+					</a>
+				<?php } ?>
 			</span>
 		</div>
 		<div class="news-bg">

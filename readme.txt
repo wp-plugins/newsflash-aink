@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7QJS8
 Tags: newflash, aink, newflash aink, news, ticker, marquee, scrolling text, news flash, flash
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 2.0.0
+Stable tag: 3.0
 
 Inserts a scroll up text.
 
@@ -64,8 +64,11 @@ No available
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0 =
 * (Apr 13, 2011) - First Release.
 
-= 2.0.0 =
+= 2.0 =
 * (Apr 25, 2011) - Fixed NewsFlash Aink Setting show only for admin.
+
+= 3.0 =
+* (June 04, 2011) - Now you can show or hidden NewsFlash Aink link.
