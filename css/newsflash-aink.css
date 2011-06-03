@@ -48,6 +48,10 @@ div#NewsFlashAink div.newsflash-name{
 	margin:0 0 0 -16px;
 	cursor:default;
 }
+div#NewsFlashAink div.newsflash-name a, div#NewsFlashAink div.newsflash-name a:hover{
+	text-decoration:none;
+	color:#ffffff;
+}
 div#NewsFlashAink div.news-bg{
 	overflow:hidden;
 	position:relative;
