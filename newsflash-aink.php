@@ -6,7 +6,7 @@ Plugin Name: Newsflash Aink
 Plugin URI: http://www.classifindo.com/newsflash-aink/
 Description: Inserts a scroll up text
 Author: Dannie Herdyawan a.k.a k0z3y
-Version: 2.0.0
+Version: 3.0
 Author URI: http://www.classifindo.com/
 */
 
