@@ -11,7 +11,7 @@ Inserts a scroll up text.
 
 == Description ==
 
-**A JQuery based NewFlash Displays a scroll up text list of news or information and ads or link. Starting from Wordpress ver.3.0 the ticker can also be used as a image gallery with description**
+**A JQuery based NewsTicker Displays a sliding list of news/information, ads/link or testimonial**
 
 in NewFlash Setting, you can set:
 
