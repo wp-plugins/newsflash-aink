@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-Plugin Name: Newsflash Aink
+Plugin Name: NewsFlash Aink
 Plugin URI: http://www.classifindo.com/newsflash-aink/
 Description: Inserts a scroll up text
 Author: Dannie Herdyawan a.k.a k0z3y
@@ -40,18 +40,6 @@ function install_NewsFlashAink()
 		`modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
         PRIMARY KEY id (`id`)) $collate;";
     $wpdb->query($sql);
-
-	$wpdb->get_row("SELECT link_id FROM $wpdb->links WHERE link_url = 'http://www.classifindo.com/'");
-    if($wpdb->num_rows == 0) {
-		$results = $wpdb->get_row("SELECT term_taxonomy_id FROM $wpdb->term_taxonomy WHERE taxonomy='link_category' LIMIT 1");
-		if($results) $blogroll_id = $results->term_taxonomy_id; else $blogroll_id = '2';
-		$default_links = array();
-		$default_links[] = array('link_url' => 'http://www.classifindo.com/','link_name' => 'Best Classified Ads in Indonesia','link_rss' => '','link_notes' =>'');
-		foreach ($default_links as $link) :
-			$wpdb->insert($wpdb->links, $link);
-			$wpdb->insert($wpdb->term_relationships,array('term_taxonomy_id'=> $blogroll_id, 'object_id' => $wpdb->insert_id));
-		endforeach;
-	} 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,13 +61,12 @@ function hapus_NewsFlashAink()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 add_action('admin_menu', 'NewsFlashAink_admin_menu');
-
 function NewsFlashAink_admin_menu() {
 	global $NewsFlashAink_path;
-	if(current_user_can('manage_options')){
-		add_object_page('NewsFlashAink','NewsFlash',1,'NewsFlashAink','NewsFlashAink_page',$NewsFlashAink_path.'/images/favicon.png');
-		add_submenu_page('NewsFlashAink','NewsFlash','Settings',1,'NewsFlashAink','NewsFlashAink_page');
-		add_submenu_page('NewsFlashAink','Create New','Create New',1,'NewsFlashAink_new','NewsFlashAink_new');
+	if((current_user_can('manage_options') || is_admin)) {
+		add_object_page('NewsFlash-Aink','NewsFlash',1,'NewsFlash-Aink','NewsFlashAink_page',$NewsFlashAink_path.'/images/favicon.png');
+		add_submenu_page('NewsFlash-Aink','NewsFlash Aink Settings','Settings',1,'NewsFlash-Aink','NewsFlashAink_page');
+		add_submenu_page('NewsFlash-Aink','Create New','Create New',1,'NewsFlashAink_new','NewsFlashAink_new');
 	}
 }
 

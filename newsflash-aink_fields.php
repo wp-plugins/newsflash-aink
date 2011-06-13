@@ -164,7 +164,7 @@ if ($results) : ?>
 		<tr>
 			<td class="titledesc">NewsFlash Content:</td>
 			<td class="forminp">
-				<textarea name="content" id="content" style="width:500px;height:100px;" class="required" minlength="5"></textarea>
+				<textarea name="content" id="content" style="width:550px;height:150px;" class="required" minlength="5"></textarea>
 				<br><small>HTML is allowed.</small>
 			</td>
 		</tr><tr>
@@ -177,9 +177,9 @@ if ($results) : ?>
 				<br><small>If you do not want this NewsFlash live, select "Inactive".</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">NNewsFlash Show for:</td>
+			<td class="titledesc">NewsFlash Show for:</td>
 			<td class="forminp">
-				<select name="showfor" id="showfor" style="min-width: 125px;" class="required">
+				<select name="showfor" id="showfor" style="min-width:125px;" class="required">
 					<option value="All User">All User</option>
 					<option value="User Login">User Login</option>
 					<option value="User Not Login">User Not Login</option>
@@ -240,7 +240,7 @@ if ($results) : ?>
 		<tr>
 			<td class="titledesc">NewsFlash Content:</td>
 			<td class="forminp">
-				<textarea name="content" id="content" style="width:500px;height:100px;" class="required" minlength="5"><?php foreach ($wpdb->get_results($AllUser) as $All) { ?><?php echo $All->content; ?><?php } ?></textarea>
+				<textarea name="content" id="content" style="width:550px;height:150px;" class="required" minlength="5"><?php foreach ($wpdb->get_results($AllUser) as $All) { ?><?php echo $All->content; ?><?php } ?></textarea>
 				<br><small>HTML is allowed.</small>
 			</td>
 		</tr><tr>
