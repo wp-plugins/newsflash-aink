@@ -57,7 +57,7 @@ No available
 
 == Notice ==
 
-* If you found a bugs, or want to donate, please use this email; yumanie[at]gmail[dot]com. Thanks before.
+* If you found a bugs, or want to donate, please use this email; classifindo[at]gmail[dot]com. Thanks before.
 * For more information, please visit http://www.classifindo.com/newsflash-aink/
 * More Aink plugin, visit http://www.classifindo.com/category/blog/wp-plugin/
 
