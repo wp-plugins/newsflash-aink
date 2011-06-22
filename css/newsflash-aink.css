@@ -114,9 +114,9 @@ div#NewsFlashAink div.newsflash-right span img a:hover{
 	opacity:0.80;
 }
 div#NewsFlashAink div.newsflash-right span a{
-	overflow: hidden;
-	width: 31px;
-	height: 50px;
+	overflow:hidden;
+	width:31px;
+	height:50px;
 	color:#bfbfbf;
 	text-decoration:none;
 }
@@ -127,7 +127,7 @@ div#NewsFlashAink div.newsflash-right span a:hover{
 div#NewsFlashAink ul.newsflash-list{
 	position:relative;
 	list-style:none;
-	display:inline;
+	display:inline-table;
 	margin:0;
 	padding:0;
 }
@@ -138,11 +138,14 @@ div#NewsFlashAink ul.newsflash-list li{
 	padding:0;
 	white-space:nowrap;
 	color:#000;
+	width:96.5%;
 	cursor:default;
 }
 div#NewsFlashAink ul.newsflash-list li a{
 	text-decoration:none;
+	opacity:0.85;
 }
 div#NewsFlashAink ul.newsflash-list li a:hover{
 	text-decoration:underline;
+	opacity:1;
 }

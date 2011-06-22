@@ -33,19 +33,19 @@
 			<td class="titledesc">NewsFlash Title:</td>
 			<td class="forminp">
 				<input name="NewsFlashAink_title" id="NewsFlashAink_title" style="width:250px;" value="<?php echo $options[NewsFlashAink_title]; ?>" type="text">
-				<br /><small>ex: "Information" or "News Flash" without quotes.</small>
+				<br /><small>ex: "Information" or "News Flash" (without quotes).</small>
 			</td>
 		</tr><tr>
 			<td class="titledesc">NewsFlash Width:</td>
 			<td class="forminp">
 				<input name="NewsFlashAink_width" id="NewsFlashAink_width" style="width:100px;" value="<?php echo $options[NewsFlashAink_width]; ?>" type="text">
-				<br /><small>ex: "500px" or "50%" without quotes.</small>
+				<br /><small>ex: "500px" or "50%" (without quotes).</small>
 			</td>
 		</tr><tr>
-			<td class="titledesc">NewsFlash Speed:</td>
+			<td class="titledesc">NewsFlash Timeout:</td>
 			<td class="forminp">
-				<input name="NewsFlashAink_speed" id="NewsFlashAink_speed" style="width:100px;" value="<?php echo $options[NewsFlashAink_speed]; ?>" type="text">
-				<br /><small>ex: "1000" or "10000" without quotes.</small>
+				<input name="NewsFlashAink_timeout" id="NewsFlashAink_timeout" style="width:100px;" value="<?php echo $options[NewsFlashAink_timeout]; ?>" type="text">
+				<br /><small>Milliseconds between slide transitions. For example: "5000" (without quotes)</small>
 			</td>
 		</tr><tr>
 			<td class="titledesc">NewsFlash Text Align:</td>
@@ -72,6 +72,42 @@
 				<br /><small>Text align for NewsFlash.</small>
 			</td>
 		</tr><tr>
+			<td class="titledesc">NewsFlash Animation:</td>
+			<td class="forminp">
+				<select name="NewsFlashAink_animation" id="NewsFlashAink_animation" style="min-width:100px;">
+						<option value="none" <?php if(($options[NewsFlashAink_animation]==''||$options[NewsFlashAink_animation]=='none')){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>none</option>
+						<option value="fade" <?php if($options[NewsFlashAink_animation]=='fade'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>fade</option>
+						<option value="fadeout" <?php if($options[NewsFlashAink_animation]=='fadeout'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>fadeout</option>
+						<option value="scrollUp" <?php if($options[NewsFlashAink_animation]=='scrollUp'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>scrollUp</option>
+						<option value="scrollDown" <?php if($options[NewsFlashAink_animation]=='scrollDown'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>scrollDown</option>
+						<option value="scrollLeft" <?php if($options[NewsFlashAink_animation]=='scrollLeft'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>scrollLeft</option>
+						<option value="scrollRight" <?php if($options[NewsFlashAink_animation]=='scrollRight'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>scrollRight</option>
+						<option value="scrollHorz" <?php if($options[NewsFlashAink_animation]=='scrollHorz'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>scrollHorz</option>
+						<option value="scrollVert" <?php if($options[NewsFlashAink_animation]=='scrollVert'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>scrollVert</option>
+						<option value="slideX" <?php if($options[NewsFlashAink_animation]=='slideX'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>slideX</option>
+						<option value="slideY" <?php if($options[NewsFlashAink_animation]=='slideY'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>slideY</option>
+						<option value="shuffle" <?php if($options[NewsFlashAink_animation]=='shuffle'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>shuffle</option>
+						<option value="turnUp" <?php if($options[NewsFlashAink_animation]=='turnUp'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>turnUp</option>
+						<option value="turnDown" <?php if($options[NewsFlashAink_animation]=='turnDown'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>turnDown</option>
+						<option value="turnLeft" <?php if($options[NewsFlashAink_animation]=='turnLeft'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>turnLeft</option>
+						<option value="turnRight" <?php if($options[NewsFlashAink_animation]=='turnRight'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>turnRight</option>
+						<option value="zoom" <?php if($options[NewsFlashAink_animation]=='zoom'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>zoom</option>
+						<option value="fadeZoom" <?php if($options[NewsFlashAink_animation]=='fadeZoom'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>fadeZoom</option>
+						<option value="blindX" <?php if($options[NewsFlashAink_animation]=='blindX'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>blindX</option>
+						<option value="blindY" <?php if($options[NewsFlashAink_animation]=='blindY'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>blindY</option>
+						<option value="blindZ" <?php if($options[NewsFlashAink_animation]=='blindZ'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>blindZ</option>
+						<option value="growX" <?php if($options[NewsFlashAink_animation]=='growX'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>growX</option>
+						<option value="growY" <?php if($options[NewsFlashAink_animation]=='growY'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>growY</option>
+						<option value="curtainX" <?php if($options[NewsFlashAink_animation]=='curtainX'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>curtainX</option>
+						<option value="curtainY" <?php if($options[NewsFlashAink_animation]=='curtainY'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>curtainY</option>
+						<option value="cover" <?php if($options[NewsFlashAink_animation]=='cover'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>cover</option>
+						<option value="uncover" <?php if($options[NewsFlashAink_animation]=='uncover'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>uncover</option>
+						<option value="toss" <?php if($options[NewsFlashAink_animation]=='toss'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>toss</option>
+						<option value="wipe" <?php if($options[NewsFlashAink_animation]=='wipe'){?>selected="selected" style="color:#000;font-weight:bold;display:block;"<?php } ?>>wipe</option>
+				</select>
+				<br /><small>Choose your transition type.</small>
+			</td>
+		</tr><tr>
 			<td class="titledesc">NewsFlash Show Link:</td>
 			<td class="forminp">
 				<input name="NewsFlashAink_link" type="checkbox" <?php
@@ -93,6 +129,11 @@
 <p class="submit bbot"><input name="save" type="submit" value="<?php esc_attr_e("Save Changes"); ?>" /></p>
 </form>
 </div>
+
+	<div class="wrap"><hr /></div>
+
+		<p style="margin-left:9px;">Place the following code into your theme files where you want the menu to appear:</p>
+		<p style="margin-left:9px;"><code>&lt;?php if(function_exists('NewsFlashAink')) { echo NewsFlashAink(); } ?&gt;</code></p>
 
 	<div class="wrap"><hr /></div>
 
@@ -124,7 +165,7 @@ global $newsflash, $wpdb;
 // check to prevent php "notice: undefined index" msg
 if(isset($_GET['action'])) $theswitch = $_GET['action']; else $theswitch ='';
 
-switch($theswitch) { case 'addNewsFlash': ?>
+switch($theswitch) { case 'addNewsFlashAink': ?>
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
@@ -147,7 +188,7 @@ if(isset($_POST['submitted'])) {
 if ($results) : ?>
 
 <?php global $NewsFlashAink_path; ?>
-<p style="text-align:center;padding-top:50px;font-size:22px;">Creating your NewsFlash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
+<p style="text-align:center;padding-top:50px;font-size:22px;">Creating your NewsFlash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink-new">
 
 <?php endif; } else { ?>
 
@@ -191,7 +232,7 @@ if ($results) : ?>
 <p class="submit">
 	<input class="btn button-primary" name="save" type="submit" value="<?php _e('Create New NewsFlash', 'k0z3y') ?>" />
 		&nbsp;&nbsp;&nbsp;
-	<input name="cancel" type="button" onClick="location.href='?page=NewsFlashAink_new'" value="<?php _e('Cancel','k0z3y')?>" />
+	<input name="cancel" type="button" onClick="location.href='?page=NewsFlashAink-new'" value="<?php _e('Cancel','k0z3y')?>" />
 	<input name="submitted" type="hidden" value="yes" />
 </p>
 </form>
@@ -199,7 +240,7 @@ if ($results) : ?>
 <?php } ?>
 </div>
 
-<?php break; case 'editNewsFlash': ?>
+<?php break; case 'editNewsFlashAink': ?>
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
@@ -217,7 +258,7 @@ if ($results) : ?>
 
 ?>
 <?php global $NewsFlashAink_path; ?>
-<p style="text-align:center;padding-top:50px;font-size:22px;">Saving your changes.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
+<p style="text-align:center;padding-top:50px;font-size:22px;">Saving your changes.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink-new">
 
 <?php } else { global $wpdb;
 
@@ -287,7 +328,7 @@ if ($results) : ?>
 <p class="submit">
 	<input class="btn button-primary" name="save" type="submit" value="<?php _e('Save changes','k0z3y') ?>" />
 		&nbsp;&nbsp;&nbsp;
-	<input name="cancel" type="button" onClick="location.href='?page=NewsFlashAink_new'" value="<?php _e('Cancel','k0z3y') ?>" />
+	<input name="cancel" type="button" onClick="location.href='?page=NewsFlashAink-new'" value="<?php _e('Cancel','k0z3y') ?>" />
 	<input name="submitted" type="hidden" value="yes" />
 </p>
 
@@ -304,7 +345,7 @@ if ($results) : ?>
 
 ?>
 <?php global $NewsFlashAink_path; ?>
-<p style="text-align:center;padding-top:50px;font-size:22px;">Deleting NewsFlash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink_new">
+<p style="text-align:center;padding-top:50px;font-size:22px;">Deleting NewsFlash.....<br /><br /><img src="<?php echo $NewsFlashAink_path; ?>/images/loading.gif" alt="" /></p><meta http-equiv="refresh" content="0; URL=?page=NewsFlashAink-new">
 
 <?php break; default: global $NewsFlashAink_path;
 
@@ -342,7 +383,7 @@ a.delete:hover {
 
 <div class="wrap">
 <div class="icon32" id="icon-themes"><br/></div>
-<h2>NewsFlash Aink&nbsp;<a class="button add-new-h2" href="?page=NewsFlashAink_new&amp;action=addNewsFlash">Add New Newsflash</a></h2>
+<h2>NewsFlash Aink&nbsp;<a class="button add-new-h2" href="?page=NewsFlashAink-new&amp;action=addNewsFlashAink">Add New NewsFlash</a></h2>
 
 
 <table id="tblspacer" class="widefat fixed" style="margin:25px 0;">
@@ -368,7 +409,7 @@ a.delete:hover {
 			<td><?php echo ucfirst($result->status) ?></td>
 			<td><?php echo ucfirst($result->showfor) ?></td>
 			<td style="text-align:center">
-				<a href="?page=NewsFlashAink_new&amp;action=editNewsFlash&amp;id=<?php echo $result->id ?>" class="edit" title="Edit"><span></span></a>&nbsp;&nbsp;&nbsp;<a onclick="return confirmBeforeDelete();" href="?page=newsflash_aink_new&amp;action=delete&amp;id=<?php echo $result->id ?>" class="delete" title="Delete"><span></span></a>
+				<a href="?page=NewsFlashAink-new&amp;action=editNewsFlashAink&amp;id=<?php echo $result->id ?>" class="edit" title="Edit"><span></span></a>&nbsp;&nbsp;&nbsp;<a onclick="return confirmBeforeDelete();" href="?page=NewsFlashAink-new&amp;action=delete&amp;id=<?php echo $result->id ?>" class="delete" title="Delete"><span></span></a>
 			</td>
 		</tr>
 	<?php $i++; } ?>

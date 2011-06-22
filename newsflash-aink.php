@@ -4,9 +4,9 @@
 /*
 Plugin Name: NewsFlash Aink
 Plugin URI: http://www.classifindo.com/newsflash-aink/
-Description: Inserts a scroll up text
+Description: Inserts a text with animation, like fade, scrollUp, slideX, shuffle, cover, and more....
 Author: Dannie Herdyawan a.k.a k0z3y
-Version: 3.0
+Version: 4.0
 Author URI: http://www.classifindo.com/
 */
 
@@ -17,7 +17,18 @@ $NewsFlashAink_path = get_settings('home').'/wp-content/plugins/'.dirname(plugin
 
 require_once ('newsflash-aink_fields.php');
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$EasingJS		= "wp-content/plugins/newsflash-aink/js/easing.js";
+$jCarouselLite	= "wp-content/plugins/newsflash-aink/js/jcarousellite.js";
+
+if(@file_exists($jCarouselLite) || @file_exists($EasingJS))
+	{ UnLinkNewsFlashFile(); }
+
+function UnLinkNewsFlashFile()
+{
+	global $EasingJS, $jCarouselLite;
+	unlink($EasingJS);
+	unlink($jCarouselLite);
+}
 
 /* When plugin is activated */
 register_activation_hook(__FILE__,'install_NewsFlashAink');
@@ -42,8 +53,6 @@ function install_NewsFlashAink()
     $wpdb->query($sql);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /* When plugin is deactivation*/
 register_deactivation_hook( __FILE__, 'hapus_NewsFlashAink' );
 function hapus_NewsFlashAink()
@@ -58,27 +67,24 @@ function hapus_NewsFlashAink()
 	delete_option($options);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 add_action('admin_menu', 'NewsFlashAink_admin_menu');
 function NewsFlashAink_admin_menu() {
 	global $NewsFlashAink_path;
 	if((current_user_can('manage_options') || is_admin)) {
 		add_object_page('NewsFlash-Aink','NewsFlash',1,'NewsFlash-Aink','NewsFlashAink_page',$NewsFlashAink_path.'/images/favicon.png');
 		add_submenu_page('NewsFlash-Aink','NewsFlash Aink Settings','Settings',1,'NewsFlash-Aink','NewsFlashAink_page');
-		add_submenu_page('NewsFlash-Aink','Create New','Create New',1,'NewsFlashAink_new','NewsFlashAink_new');
+		add_submenu_page('NewsFlash-Aink','Create New','Create New',1,'NewsFlashAink-new','NewsFlashAink_new');
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function NewsFlashAink_page() {
 	if (isset($_POST['save'])) {
 		$options['NewsFlashAink_enable']		= trim($_POST['NewsFlashAink_enable'],'{}');
 		$options['NewsFlashAink_title']			= trim($_POST['NewsFlashAink_title'],'{}');
 		$options['NewsFlashAink_width']			= trim($_POST['NewsFlashAink_width'],'{}');
-		$options['NewsFlashAink_speed']			= trim($_POST['NewsFlashAink_speed'],'{}');
+		$options['NewsFlashAink_timeout']		= trim($_POST['NewsFlashAink_timeout'],'{}');
 		$options['NewsFlashAink_text_align']	= trim($_POST['NewsFlashAink_text_align'],'{}');
+		$options['NewsFlashAink_animation']		= trim($_POST['NewsFlashAink_animation'],'{}');
 		$options['NewsFlashAink_link']			= trim($_POST['NewsFlashAink_link'],'{}');
 		update_option('NewsFlashAink_option', $options);
 		// Show a message to say we've done something
@@ -89,58 +95,47 @@ function NewsFlashAink_page() {
 	echo NewsFlashAinkSettings();
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 function NewsFlashAink_new()
 {
 	echo CreateNewNewsFlashAink();
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 add_action("plugins_loaded", "install_NewsFlashAink");
 add_action("wp_head", "NewsFlashAink_head");
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function NewsFlashAink_head()
 {
 	global $options, $NewsFlashAink_path;
 	$options = get_option('NewsFlashAink_option');
-///////////////////////////////////////////////////////////////////////////////
 
-	echo '<!-- NewsFlash Aink -->';
-///////////////////////////////////////////////////////////////////////////////
-	echo '<script type="text/javascript" language="javascript" src="'.$NewsFlashAink_path.'/js/jcarousellite.js"></script>';
-	echo '<script type="text/javascript" language="javascript" src="'.$NewsFlashAink_path.'/js/easing.js"></script>';
+	if ($options[NewsFlashAink_enable] == 'yes') {
+
 	echo '
-		<script type="text/javascript" language="javascript">
-		jQuery(document).ready(function(){
-			jQuery("div.newsflash-container").jCarouselLite({
-				vertical: true,
-				hoverPause: true,
-				visible: 1,
-				auto: 3500,
-				speed: ' . $options[NewsFlashAink_speed] . ',
-				easing: "easeOutSine"
-			});
-		});
-		</script>';
-////////////////////////////////////////////////////////////////////////////////
-	echo '<link href="'.$NewsFlashAink_path.'/css/newsflash-aink.css" type="text/css" rel="stylesheet" />';
-///////////////////////////////////////////////////////////////////////////////
-	echo '<!-- NewsFlash Aink -->';
-}
+	<!-- NewsFlash Aink -->
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		<script type="text/javascript" language="javascript" src="'.$NewsFlashAink_path.'/js/jquery.cycle.all.min.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function(){
+				$("ul.newsflash-list").cycle({
+					timeout: '.$options[NewsFlashAink_timeout].',	// milliseconds between slide transitions
+					fx: "'.$options[NewsFlashAink_animation].'",	// choose your transition type
+					pause: 1,										// true to enable "pause on hover"
+				});
+			});
+		</script>
+		<link href="'.$NewsFlashAink_path.'/css/newsflash-aink.css" type="text/css" rel="stylesheet" />
+
+	<!-- NewsFlash Aink -->';
+
+	}	
+}
 
 function NewsFlashAink()
 {
 	global $wpdb, $options, $NewsFlashAink_path, $userdata;
 	get_currentuserinfo();
 	$options = get_option('NewsFlashAink_option');
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	$AllUser = $wpdb->prepare("SELECT content "
 	. "FROM ". $wpdb->prefix . "newsflash_aink "
@@ -160,7 +155,6 @@ function NewsFlashAink()
 	. "AND showfor='User Not Login'"
 	. "ORDER BY RAND()");
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
 
 <?php if ($options[NewsFlashAink_enable] == 'yes'): ?>
@@ -199,23 +193,19 @@ function NewsFlashAink()
 			<div class="news-bg-content">
 				<div class="newsflash-container">
 					<ul class="newsflash-list">
-<?php /////////////////////////////////////////////////////////////////////////////// ?>
 						<?php foreach ($wpdb->get_results($AllUser) as $All) { ?>
 							<li><?php echo $All->content; ?></li>
 						<?php } ?>
-<?php /////////////////////////////////////////////////////////////////////////////// ?>
 						<?php if (is_user_logged_in()): ?>
 							<?php foreach ($wpdb->get_results($UserLogin) as $Login) { ?>
 								<li><?php echo $Login->content; ?></li>
 							<?php } ?>
 						<?php endif; ?>
-<?php /////////////////////////////////////////////////////////////////////////////// ?>
 						<?php if (!is_user_logged_in()): ?>
 							<?php foreach ($wpdb->get_results($UserNotLogin) as $NotLogin) { ?>
 								<li><?php echo $NotLogin->content; ?></li>
 							<?php } ?>
 						<?php endif; ?>
-<?php /////////////////////////////////////////////////////////////////////////////// ?>
 					</ul>
 				</div>
 			</div>
@@ -225,11 +215,4 @@ function NewsFlashAink()
 </div>
 </div>
 
-<?php
-///////////////////////////////////////////////////////////////////////////////
-
-	endif;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-?>
+<?php endif; } ?>

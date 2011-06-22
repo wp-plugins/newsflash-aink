@@ -1,43 +1,45 @@
-=== NewFlash Aink ===
+=== NewsFlash Aink ===
 Contributors: Dannie Herdyawan
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AGA6PY4PFSFMW
-Tags: newflash, aink, newflash aink, news, ticker, marquee, scrolling text, news flash, flash
+Tags: aink, NewsFlash, NewsFlash aink, news, ticker, fade, scrollUp, slideX, shuffle, cover, marquee, scrolling text, news flash, flash, scroll
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 3.0
+Stable tag: 4.0
 
-Inserts a scroll up text.
+Inserts a text with animation, like fade, scrollUp, slideX, shuffle, cover, and more....
 
 
 == Description ==
 
-**A JQuery based NewsTicker Displays a sliding list of news/information, ads/link or testimonial**
+**A JQuery based NewsTicker with animation, like fade, scrollUp, slideX, shuffle, cover, and more.... Can displays a news/information, ads/link or testimonial**
 
-in NewFlash Setting, you can set:
+in NewsFlash Setting, you can set:
 
-* NewFlash Enable: To show NewFlash Aink on your site.
-* NewFlash Width: Width for NewFlash.
-* NewFlash Speed: Speed for NewFlash in second.
-* NewFlash Title Text Align: Text align for title of NewFlash.
-* NewFlash Content Text Align: Text align for content of NewFlash.
+* NewsFlash Enable: To show NewsFlash Aink on your site.
+* NewsFlash Title: Title for the NewsFlash.
+* NewsFlash Width: Width for NewsFlash.
+* NewsFlash Timeout: Milliseconds between slide transitions.
+* NewsFlash Text Align: Text align for NewsFlash.
+* NewsFlash Aink Animation: Choose your transition type.
+* NewsFlash Show Link: Show NewsFlash Aink link.
 
-in NewFlash Create New pages, you can set:
+in NewsFlash Create New pages, you can set:
 
-* NewFlash Content: Content for your NewFlash, HTML is allowed.
-* NewFlash Status: Status for your NewFlash. If you do not want the NewFlash live, select "Inactive".
-* NewFlash Show for: Show the NewFlash for selected user.
+* NewsFlash Content: Content for your NewsFlash, HTML is allowed.
+* NewsFlash Status: Status for your NewsFlash. If you do not want the NewsFlash live, select "Inactive".
+* NewsFlash Show for: Show the NewsFlash for selected user.
 
 
 == Installation ==
 
-1. Upload the folder `newflash-aink` to your `/wp-content/plugins/` directory,
+1. Upload the folder `NewsFlash-aink` to your `/wp-content/plugins/` directory,
 2. Activate the plugin through the "Plugins" menu in WordPress,
 3. Then place the following code into your theme files where you want the menu to appear:
 
-	&lt;?php if (function_exists('NewFlashAink')) { echo NewFlashAink(); } ?&gt;
+	&lt;?php if(function_exists('NewsFlashAink')) { echo NewsFlashAink(); } ?&gt;
 
-4. Configure options via the NewFlash ==> Settings menu,
-5. Create a new NewFlash on NewFlash ==> Create New page.
+4. Configure options via the NewsFlash ==> Settings menu,
+5. Create a new NewsFlash on NewsFlash ==> Create New page.
 
 
 == Upgrade Notice ==
@@ -52,7 +54,8 @@ No available
 
 == Frequently Asked Questions ==
 
-No available
+Q: I have one news in NewsFlash Aink, but why not work with the animation like fade, scrollUp or other?
+A: Of course not work if you have only one news in NewsFlash Aink, you must have two or other news in NewsFlash Aink..
 
 
 == Notice ==
@@ -72,3 +75,6 @@ No available
 
 = 3.0 =
 * (June 04, 2011) - Now you can show or hidden NewsFlash Aink link.
+
+= 4.0 =
+* (June 22, 2011) - Added more animation, like fade, scrollUp, slideX, shuffle, cover, and more.....
