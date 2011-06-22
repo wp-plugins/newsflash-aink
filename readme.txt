@@ -54,8 +54,8 @@ No available
 
 == Frequently Asked Questions ==
 
-Q: I have one news in NewsFlash Aink, but why not work with the animation like fade, scrollUp or other?
-A: Of course not work if you have only one news in NewsFlash Aink, you must have two or other news in NewsFlash Aink..
+* Q: I have one news in NewsFlash Aink, but why not work with the animation like fade, scrollUp or other?
+* A: Of course not work if you have only one news in NewsFlash Aink, you must have two or other news in NewsFlash Aink..
 
 
 == Notice ==
