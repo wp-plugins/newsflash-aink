@@ -6,7 +6,7 @@ Plugin Name: NewsFlash Aink
 Plugin URI: http://www.classifindo.com/newsflash-aink/
 Description: Inserts a text with animation, like fade, scrollUp, slideX, shuffle, cover, and more....
 Author: Dannie Herdyawan a.k.a k0z3y
-Version: 4.0
+Version: 5.0
 Author URI: http://www.classifindo.com/
 */
 

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: aink, NewsFlash, NewsFlash aink, news, ticker, fade, scrollUp, slideX, shuffle, cover, marquee, scrolling text, news flash, flash, scroll
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 4.0
+Stable tag: 5.0
 
 Inserts a text with animation, like fade, scrollUp, slideX, shuffle, cover, and more....
 
@@ -78,3 +78,6 @@ No available
 
 = 4.0 =
 * (June 22, 2011) - Added more animation, like fade, scrollUp, slideX, shuffle, cover, and more.....
+
+= 5.0 =
+* (Aug 28, 2011) - Small bug fix and ADDED new jQuery Cycle Plugin.
